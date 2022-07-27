@@ -6,6 +6,7 @@ import com.sparta.homework.models.PostRequestDto;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Service
@@ -22,6 +23,10 @@ public class PostService{
         return post;
     }
 
+    @Transactional
+    public List<Post> findAll(){
+        return postRepository.findAll();
+    }
     @Transactional
     public Post findOnePost(Long id){
         return postRepository.findById(id).orElseThrow(
