@@ -17,4 +17,9 @@ public class PostRequestDto {
         this.content = content;
         this.password = password;
     }
+    public PostRequestDto(String author, String title, String content) {
+        this.author = author;
+        this.title = title;
+        this.content = content;
+    }
 }

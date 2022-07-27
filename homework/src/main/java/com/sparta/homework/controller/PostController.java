@@ -18,8 +18,9 @@ public class PostController {
 
     @GetMapping("/api/posts") // 2. 전체 게시글 조회
     public List<Post> getPosts(){
+        // 2. while next
         return postRepository.findAll();
-    }
+    } // 1. JPA에서 ~는 제외하고 들고오기
 
     @GetMapping("/api/posts/{id}") // 4. 게시글 조회
     public Post getOnePost(@PathVariable Long id){

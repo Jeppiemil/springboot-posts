@@ -1,5 +1,6 @@
 package com.sparta.homework.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sparta.homework.models.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,16 +28,16 @@ public class Post extends Timestamped {
     @Column(nullable = false)
     private String content;
 
+    @JsonIgnore
     @Column(nullable = false)
     private String password;
 
-    public Post(String author, String title, String content, String password){
-        this.author = author;
-        this.title = title;
-        this.content = content;
-        this.password = password;
-
-    }
+//    public Post(String author, String title, String content, String password){
+//        this.author = author;
+//        this.title = title;
+//        this.content = content;
+//        this.password = password;
+//    }
 
     public Post(PostRequestDto requestDto){
         this.author = requestDto.getAuthor();
